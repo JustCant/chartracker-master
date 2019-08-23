@@ -1,0 +1,109 @@
+<h2 id='newCharHeader'>Create a new character</h2>
+<table id='characterAdder'>
+  <tbody>
+    <td id='charNameAdd'>
+      <input type="text" placeholder='Character Name' ng-model='char.name'>
+      <div class='alert alert-warning' id="namePopup">Must provide character name</div>
+    </td>
+    <td id='charHpAdd'>
+      <input type="text" placeholder='Character Hit Points' ng-model='char.hitPoints'>
+      <div class='alert alert-warning' id="hpPopup">Must provide initial HP</div>
+      <div class='alert alert-warning' id="hpPopup2">Initial HP must be number</div>
+    </td>
+    <td><button class='addHero btn btn-primary' ng-click='addHero()'>Add as Hero</button></td>
+    <td><button class='addEnemy btn btn-dark' ng-click='addEnemy()'>Add as Enemy</button></td>
+  </tbody>
+</table>
+
+<br/>
+<div class="wrapper">
+  <h2>Heroes</h2>
+  <h2>Enemies</h2>
+</div>
+
+<div class='wrapper'>
+<br/>
+
+<table id='players'>
+  <thead>
+    <tr class='pcRow'>
+      <th class='name'>PC Name</th>
+      <th class='hp'>Hit Points</th>
+      <th class='change'>Alter</th>
+      <th class='dec'>Decrease</th>
+      <th class='inc'>Increase</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class='pcRow' ng-repeat='char in playerChars track by char.id'>
+      <td class='name'>
+        <p ng-hide='char.show'>{{char.name}}</p>
+        <input type="text" class="nameInput" placeholder={{char.name}} ng-model='char.name' ng-show='char.show'>
+      </td>
+      <td class='hp'>
+        <p ng-hide='char.show'>{{char.hitPoints}}</p>
+        <input type="text" class="heroHpInput" placeholder={{char.hitPoints}} ng-model='char.hitPoints' ng-show='char.show'>
+        <div class='alert alert-warning heroHpPopup' ng-show='char.popupShow'>HP must be number</div>
+      </td>
+      <td class='change'>
+          <button class='edit btn btn-secondary' ng-click='edit(char, playerChars)'>Edit</button>
+          <button class='delete btn btn-warning' ng-click='delete(char, playerChars)'>Delete</button>
+      </td>
+      <td class='inc incCell'>
+          <button class='btn btn-danger decOne' ng-click='decrement(char, 1)'>1</button>
+          <button class='btn btn-danger decTwo' ng-click='decrement(char, 5)'>5</button>
+          <button class='btn btn-danger decThree' ng-click='decrement(char, 10)'>10</button>
+          <button class='btn btn-danger decFour' ng-click='decrement(char, 20)'>20</button>
+      </td>
+      <td class='dec decCell'>
+          <button class='btn btn-success incOne' ng-click='increment(char, 1)'>1</button>
+          <button class='btn btn-success incTwo' ng-click='increment(char, 5)'>5</button>
+          <button class='btn btn-success incThree' ng-click='increment(char, 10)'>10</button>
+          <button class='btn btn-success incFour' ng-click='increment(char, 20)'>20</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+  <br/>
+  <table id='enemies'>
+    <thead>
+      <tr class='enemyRow'>
+        <th class='name'>Enemy Name</th>
+        <th class='hp'>Hit Points</th>
+        <th class='change'>Alter</th>
+        <th class='dec'>Decrease</th>
+        <th class='inc'>Increase</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class='enemyRow' ng-repeat='char in enemyChars track by char.id'>
+        <td class='name'>
+          <p ng-hide='char.show'>{{char.name}}</p>
+          <input type="text" class="nameInput" placeholder={{char.name}} ng-model='char.name' ng-show='char.show'>
+        </td>
+        <td class='hp'>
+          <p ng-hide='char.show'>{{char.hitPoints}}</p>
+          <input type="text" class="enemyHpInput" placeholder={{char.hitPoints}} ng-model='char.hitPoints' ng-show='char.show'>
+          <div class='alert alert-warning enemyHpPopup' ng-show='char.popupShow'>HP must be number</div>
+        </td>
+        <td class='change'>
+            <button class='edit btn btn-secondary' ng-click='edit(char, enemyChars)'>Edit</button>
+            <button class='delete btn btn-warning' ng-click='delete(char, enemyChars)'>Delete</button>
+        </td>
+        <td class='inc incCell'>
+            <button class='btn btn-danger decOne' ng-click='decrement(char, 1)'>1</button>
+            <button class='btn btn-danger decTwo' ng-click='decrement(char, 5)'>5</button>
+            <button class='btn btn-danger decThree' ng-click='decrement(char, 10)'>10</button>
+            <button class='btn btn-danger decFour' ng-click='decrement(char, 20)'>20</button>
+        </td>
+        <td class='dec decCell'>
+            <button class='btn btn-success incOne' ng-click='increment(char, 1)'>1</button>
+            <button class='btn btn-success incTwo' ng-click='increment(char, 5)'>5</button>
+            <button class='btn btn-success incThree' ng-click='increment(char, 10)'>10</button>
+            <button class='btn btn-success incFour' ng-click='increment(char, 20)'>20</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

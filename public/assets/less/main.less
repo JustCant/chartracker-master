@@ -1,0 +1,121 @@
+table {
+  border-collapse: collapse;
+  width: 48%;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+thead,
+tbody,
+tr {
+  width: 100%;
+}
+thead .pcRow .name,
+thead .enemyRow .name {
+  border-top-left-radius: 10px;
+}
+thead .pcRow .inc,
+thead .enemyRow .inc {
+  border-top-right-radius: 10px;
+}
+td {
+  border: 1px solid black;
+  padding: 5px;
+
+  .name,
+  .td {
+    text-align: center;
+  }
+}
+th {
+  border: 1px solid black;
+  padding: 5px;
+  text-align: left;
+  cursor: pointer;
+}
+#characterAdder {
+  margin-top: 10px;
+}
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.btn {
+  width: 96%;
+  margin: 2px;
+}
+
+.hp {
+  width: 10%;
+}
+
+.name,
+.change {
+  width: 15%;
+}
+
+.dec,
+.inc {
+  width: 30%;
+}
+
+.incCell,
+.decCell {
+  display: grid;
+  grid-gap: 1%;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+}
+
+.incOne,
+.decOne {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.incTwo,
+.decTwo {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.incThree,
+.decThree {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.incFour,
+.decFour {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.pcRow,
+.enemyRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.nameInput,
+.heroHpInput,
+.enemyHpInput {
+  width: 100%;
+}
+
+.name p {
+  overflow: hidden;
+}
+
+#title,
+#newCharHeader {
+  text-align: center;
+}
