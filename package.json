@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "grunt": "^1.0.3",
     "grunt-contrib-cssmin": "^2.2.1",
     "grunt-contrib-less": "^2.0.0",
